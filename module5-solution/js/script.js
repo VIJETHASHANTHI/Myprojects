@@ -98,7 +98,7 @@ function buildAndShowHomeHTML (categories) {
     homeHtmlUrl,
     function (homeHtml) {
 
-      var chosenCategoryShortName = chooseRandomCategory (categories);
+      var chosenCategoryShortName = chooseRandomCategory(categories);
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
@@ -116,10 +116,10 @@ function buildAndShowHomeHTML (categories) {
       // $dc.loadMenuItems('L')
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
-      var ShortName = "'" + chosenCategoryShortName.short_name + "'";
-      //vaar short_name = "'" + chosenCategoryShortName.short_name + "'";
-      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlToInsertIntoMainPage,
-       "randomCategoryShortName",ShortName);
+      var short_name = "'" + chosenCategoryShortName.short_name + "'";
+      //var short_name = "'" + chosenCategoryShortName.short_name + "'";
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,
+       "randomCategoryShortName",short_name);
 
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
@@ -133,7 +133,7 @@ function buildAndShowHomeHTML (categories) {
 
 
 // Given array of category objects, returns a random category object.
-function chooseRandomCategory (categories) {
+function chooseRandomCategory(categories) {
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
 
